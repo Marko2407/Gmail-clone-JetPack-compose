@@ -1,4 +1,4 @@
-package com.mvukosav.gmailclone
+package com.mvukosav.gmailclone.models
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.AllInbox
