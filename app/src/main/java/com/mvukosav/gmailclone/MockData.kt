@@ -1,5 +1,6 @@
 package com.mvukosav.gmailclone
 
+import com.mvukosav.gmailclone.models.Account
 import com.mvukosav.gmailclone.models.MailData
 
 val mailMockList = listOf(
@@ -73,4 +74,10 @@ val mailMockList = listOf(
         body = "Marko je najveci kralj",
         timeStamp = "00:00"
     ),
+)
+
+val accountMockList = listOf(
+    Account(icon = R.drawable.restaurant, userName = "Marko legenda", email = "Marko@Legenda.com", unReadMails = 99),
+        Account(userName = "Ivan legenda", email = "Ivan@Legenda.com", unReadMails = 939),
+Account(userName = "Bob legenda", email = "Bob@Legenda.com", unReadMails = 9)
 )

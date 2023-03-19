@@ -1,5 +1,8 @@
 package com.mvukosav.gmailclone.components
 
+import androidx.compose.foundation.ScrollState
+import androidx.compose.foundation.gestures.Orientation
+import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -30,12 +33,16 @@ import com.mvukosav.gmailclone.mailMockList
 import com.mvukosav.gmailclone.models.MailData
 
 @Composable
-fun MailList(paddingValues: PaddingValues) {
-    Box(modifier = Modifier.padding(paddingValues = paddingValues)){
-        LazyColumn(modifier = Modifier
-            .fillMaxSize()
-            .padding(16.dp)){
-            items(mailMockList){ mailData ->
+fun MailList(paddingValues: PaddingValues, scrollState: ScrollState) {
+
+    Box(modifier = Modifier.padding(paddingValues = paddingValues)) {
+        LazyColumn(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(16.dp)
+                .scrollable(scrollState, Orientation.Vertical)
+        ) {
+            items(mailMockList) { mailData ->
                 MailItem(mailData = mailData)
 
             }
